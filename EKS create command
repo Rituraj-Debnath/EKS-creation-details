@@ -1,12 +1,15 @@
 ######### EKS Creation using eksctl command with the lowest cost possible ###########
 
 eksctl create cluster \
-  --name test-cluster \
-  --region us-east-1 \
-  --node-type t2.medium \
+  --name cheap-cluster \
+  --region ap-south-1 \
+  --node-type t3.small \
   --nodes 1 \
   --nodes-min 1 \
-  --nodes-max 2 \
-  --nodegroup-name workers
+  --nodes-max 1 \
+  --nodegroup-name workers \
+  --auto-mode-config-enabled=false
 
-Here a cluster will be created with the name,,,all the things here are changeable after cluster creation ,,but not the k8s cluster name. 
+
+Here a cluster will be created with the name,,,all the things here are changeable after cluster creation ,,but not the k8s cluster name.  in future in the new eksctl version auto
+mode will be enabled by defualt means it will be costly as it would add many add ons in the cluster ,,so from now we are turning off the auto mode.
