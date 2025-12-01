@@ -1,0 +1,12 @@
+######### EKS Creation using eksctl command with the lowest cost possible ###########
+
+eksctl create cluster \
+  --name test-cluster \
+  --region us-east-1 \
+  --node-type t2.medium \
+  --nodes 1 \
+  --nodes-min 1 \
+  --nodes-max 2 \
+  --nodegroup-name workers
+
+Here a cluster will be created with the name,,,all the things here are changeable after cluster creation ,,but not the k8s cluster name. 
