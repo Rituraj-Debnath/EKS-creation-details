@@ -1,0 +1,5 @@
+So after cluster creation i've to add it in the kubeconfig file so run : aws eks update-kubeconfig --name <cluster-name> --region <region-name>
+it will create a new context for the eks cluster and change it to that by defualt. 
+
+after that if i wanna test im in the eks cluster or not just do : k get pods/nodes etc...test with a nginx pod & service,,,mind it if testing with nodeport ,,,we must open the nodeport
+ex: 30020 in the sg of the ec2/worker node then only curl is possible ,,, the node ip can be get using k get nodes -o wide...the external ip is the ec2's EIP for outside access.
